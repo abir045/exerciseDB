@@ -16,9 +16,13 @@ const options = {
 
 async function fetchExercises() {
   const response = await fetch(
-    "https://exercisedb.p.rapidapi.com/exercises?limit=10",
+    "https://exercisedb.p.rapidapi.com/exercises",
     options
   );
+
+  // make  a set timeout wait 1 sec
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const exercises = await response.json();
 
@@ -32,15 +36,16 @@ const ExercisesPage = async () => {
 
   return (
     <div className="flex flex-col items-center gap-10 w-full my-auto">
-      <h1>Exercises page</h1>
-      <h2>Exercise List</h2>
+      <h1 className="text-3xl font-bold uppercase">List of all exercises</h1>
+
       <ul className="flex flex-col space-y-5 w-full">
-        {workouts.map((workout) => (
-          <li className="flex  text-black list-none mx-auto" key={workout.name}>
-            <Link href={`/exercies/all/${workout.name}`}>
-              <div className="flex flex-col bg-gray-100 px-6 py-4 rounded">
-                <h3 className="text-xl font-bold">{workout.name}</h3>
-                <img src={workout.gifUrl} alt={workout.name} />
+        {workouts.slice(0, 10).map((workout) => (
+          <li className="flex  text-black list-none mx-auto" key={workout.id}>
+            <Link href={`/exercises/all/${workout.id}`}>
+              <div className="flex flex-col bg-gray-100 px-6 py-4 rounded w-[350px] ">
+                <h3 className="text-xl font-bold text-center">
+                  {workout.name}
+                </h3>
 
                 <div className="flex justify-between mt-5">
                   <span>
