@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="flex justify-center items-center space-x-5 bg-[#0047ab] p-4  border-b-[5px] border-white">
+    <header className="flex justify-center items-center space-x-5 bg-slate-900 p-4 ">
       <div className="container ">
         <div className="logo space-x-5 ">
           <Link href="/"> Exercises DB </Link>

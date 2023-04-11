@@ -29,7 +29,11 @@ const MusclesPage = async () => {
         <ul>
           <li key={muscle.id}>
             <Link href={`/muscles/all/${muscle}`}>
-              <p>{muscle}</p>
+              <div className="bg-stone-100 rounded-lg w-[350px] h-[100px] hover:translate-x-4  flex justify-center items-center">
+                <p className="hover:scale-110 text-[20px] hover:ease-in-out text-black capitalize font-bold">
+                  {muscle}
+                </p>
+              </div>
             </Link>
           </li>
         </ul>

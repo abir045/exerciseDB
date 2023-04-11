@@ -5,19 +5,19 @@ import ExercisesPage from "./exercises/all/page";
 const HomePage = () => {
   return (
     <div>
-      <h1>Welcome </h1>
+      {/* <h1>Welcome </h1> */}
       <ul>
         <li>
           <Link href="/">
-            <ExercisesPage />{" "}
-          </Link>{" "}
+            <ExercisesPage />
+          </Link>
         </li>
-        <li>
+        {/* <li>
           <Link href="/about">About</Link>{" "}
         </li>
         <li>
           <Link href="/about/team">Team</Link>{" "}
-        </li>
+        </li> */}
       </ul>
     </div>
   );

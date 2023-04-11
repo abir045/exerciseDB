@@ -28,14 +28,14 @@ const Exercises = ({ workouts }) => {
   return (
     <>
       <div className="">
-        <ul className="flex flex-col space-y-5 w-full ">
+        <ul className="flex flex-col space-y-5 w-full  ">
           {workouts.slice(currentSliceStart, currentSliceEnd).map((workout) => (
             <li
               className="flex  text-black list-none mx-auto my-auto"
               key={workout.id}
             >
               <Link href={`/exercises/all/${workout.id}`}>
-                <div className="flex flex-col bg-gray-100 px-6 py-4 rounded w-[350px] ">
+                <div className="flex flex-col bg-gray-100 px-6 py-4 rounded w-[350px] hover:scale-110 hover:ease-in-out">
                   <h3 className="text-xl font-bold text-center">
                     {workout.name}
                   </h3>
@@ -69,7 +69,7 @@ const Exercises = ({ workouts }) => {
 
       {currentSliceStart >= 10 && (
         <button
-          className="bg-white text-black px-6 py-4 rounded-lg font-semibold capitalize"
+          className="bg-white text-black px-6 py-4 rounded-lg font-semibold capitalize my-5"
           onClick={previousPage}
         >
           previous page
@@ -77,7 +77,7 @@ const Exercises = ({ workouts }) => {
       )}
       {currentSliceEnd < workouts.length && (
         <button
-          className="bg-white text-black px-6 py-4 rounded-lg font-semibold capitalize"
+          className="bg-white text-black px-6 py-4 rounded-lg font-semibold capitalize my-5"
           onClick={nextPage}
         >
           next page
