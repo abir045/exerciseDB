@@ -8,9 +8,9 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Salekin Imran",
-  description: "next 13 walk around",
-  keywords: "web development , react",
+  title: "Fitness Cloud",
+  description: "Fitness DB App",
+  keywords: "web development , react, next Js",
 };
 
 export default function RootLayout({ children }) {

@@ -30,7 +30,7 @@ const Workout = async ({ id }) => {
 
   return (
     <>
-      <div className="flex flex-col w-full">
+      <div key={workout.id} className="flex flex-col w-full">
         <h2 className="text-3xl font-bold my-5 capitalize">{workout.name}</h2>
         <img src={workout.gifUrl} alt={workout.name} className="w-[400px]" />
 

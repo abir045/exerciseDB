@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import ExercisesPage from "./exercises/all/page";
 
 const HomePage = () => {
   return (
@@ -7,7 +8,9 @@ const HomePage = () => {
       <h1>Welcome </h1>
       <ul>
         <li>
-          <Link href="/">Home</Link>{" "}
+          <Link href="/">
+            <ExercisesPage />{" "}
+          </Link>{" "}
         </li>
         <li>
           <Link href="/about">About</Link>{" "}

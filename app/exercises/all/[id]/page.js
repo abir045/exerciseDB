@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Workout from "@/app/components/Workout";
 import Link from "next/link";
 
@@ -11,7 +11,10 @@ const WorkoutPage = ({ params: { id } }) => {
         </button>
       </Link>
       {/* single workout */}
-      <Workout id={id} />
+
+      <Suspense fallback={<div>loading...</div>}>
+        <Workout id={id} />
+      </Suspense>
     </div>
   );
 };
