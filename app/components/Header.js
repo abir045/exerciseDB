@@ -10,6 +10,7 @@ const Header = () => {
           <Link href="/about/team"> About </Link>
           <Link href="/exercises/all"> Exercises </Link>
           <Link href="/muscles/all"> List of Target Muscles </Link>
+          <Link href="/bodyparts/all">List of Body Parts </Link>
         </div>
       </div>
     </header>

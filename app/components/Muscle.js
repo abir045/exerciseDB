@@ -1,4 +1,6 @@
 import React from "react";
+import WorkoutsByBodyParts from "./WorkoutsByBodyParts";
+import { Suspense } from "react";
 
 const options = {
   method: "GET",
@@ -14,6 +16,10 @@ async function fetchWorkoutsByMuscle(muscle) {
     options
   );
 
+  // make  a set timeout wait 1 sec
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
   const workout = await response.json();
 
   //console.log(workout);
@@ -25,29 +31,11 @@ const Workouts = async ({ muscle }) => {
   const workouts = await fetchWorkoutsByMuscle(muscle);
 
   return (
+    // <Suspense fallback={<div>loading...</div>}>
     <div className="flex flex-col w-full">
-      {workouts.slice(0, 10).map((workout) => (
-        <div key={workout.id}>
-          <h2 className="text-3xl font-bold my-5 capitalize">{workout.name}</h2>
-          <img src={workout.gifUrl} alt={workout.name} className="w-[400px]" />
-
-          <div className="flex justify-between mt-5 font-medium capitalize">
-            <span>Body Part Involved</span>
-            <p className=""> {workout.bodyPart}</p>
-          </div>
-
-          <div className="flex justify-between mt-5 font-medium capitalize">
-            <span>Equipment Needed</span>
-            <p> {workout.equipment}</p>
-          </div>
-
-          <div className="flex justify-between mt-5 font-medium capitalize">
-            <span>target muscle</span>
-            <p>{workout.target}</p>
-          </div>
-        </div>
-      ))}
+      <WorkoutsByBodyParts workouts={workouts} />
     </div>
+    // </Suspense>
   );
 };
 

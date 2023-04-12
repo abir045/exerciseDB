@@ -1,14 +1,14 @@
-import { Suspense } from "react";
+import BodyPartWorkouts from "@/app/components/BodyPartWorkouts";
+import React from "react";
 import Link from "next/link";
+import { Suspense } from "react";
 
-import Workouts from "@/app/components/Muscle";
-
-const page = ({ params: { muscle } }) => {
+const WorkoutsByBodyPartPage = ({ params: { bodyPart } }) => {
   return (
     <div className="flex flex-col space-y-5">
       <Link className="my-5" href="/muscles/all">
         <button className="bg-white text-black px-6 py-4 rounded font-semibold text-[20px]">
-          Back to all Muscle Groups
+          Back to all Body Parts
         </button>
       </Link>
 
@@ -17,10 +17,10 @@ const page = ({ params: { muscle } }) => {
       </h1>
 
       <Suspense fallback={<div>loading...</div>}>
-        <Workouts muscle={muscle} />
+        <BodyPartWorkouts bodyPart={bodyPart} />
       </Suspense>
     </div>
   );
 };
 
-export default page;
+export default WorkoutsByBodyPartPage;

@@ -15,6 +15,10 @@ async function fetchTargetMuscles() {
     options
   );
 
+  // make  a set timeout wait 1 sec
+
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
   const muscles = await response.json();
 
   return muscles;
