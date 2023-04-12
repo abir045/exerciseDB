@@ -12,9 +12,7 @@ const WorkoutsByBodyPartPage = ({ params: { bodyPart } }) => {
         </button>
       </Link>
 
-      <h1 className="text-2xl font-semibold">
-        List of Workouts by Target Muscle
-      </h1>
+      <h1 className="text-2xl font-semibold">List of Workouts by Body Part</h1>
 
       <Suspense fallback={<div>loading...</div>}>
         <BodyPartWorkouts bodyPart={bodyPart} />

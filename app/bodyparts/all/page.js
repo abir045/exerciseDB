@@ -22,16 +22,17 @@ async function fecthBodyParts() {
 
 const BodyPartsPage = async () => {
   const bodyParts = await fecthBodyParts();
+  console.log(bodyParts);
 
   return (
     <div className="flex flex-col justify-center items-center my-10 space-y-10">
       {bodyParts.map((bodyPart) => (
         <Link href={`/bodyparts/all/${bodyPart}`}>
-          <div className="bg-stone-100 rounded-lg w-[350px] h-[100px] hover:translate-x-4  flex justify-center items-center my-5">
-            <p
-              key={bodyPart.id}
-              className="hover:scale-110 text-[20px] hover:ease-in-out text-black capitalize font-bold"
-            >
+          <div
+            key={bodyPart}
+            className="bg-stone-100 rounded-lg w-[350px] h-[100px] hover:translate-x-4  flex justify-center items-center my-5"
+          >
+            <p className="hover:scale-110 text-[20px] hover:ease-in-out text-black capitalize font-bold">
               {bodyPart}
             </p>
           </div>
